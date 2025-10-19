@@ -1,7 +1,7 @@
 # 🧩 Paczka do zadania Rozwiązanie pokojowe
 ## Autor: Patryk Grabowski
 
-Wersja 1.0, 18.10.2025
+Wersja 1.01, 19.10.2025
 
 Ten pakiet zawiera **zestaw testów**, **weryfikator wyjścia** oraz **narzędzia pomocnicze** do lokalnego testowania rozwiązań dla zadania **Rozwiązanie pokojowe**.
 
@@ -73,7 +73,7 @@ sinol-make run
 * Testy są przygotowane zgodnie ze specyfikacją zadania i pogrupowane w grupy według tabelki.
 * Grupa testów 0 to nie są testy przykładowe, ale dodatkowa grupa z warunkiem `n <= 10`, żeby mieć wciąż względnie małe testy, ale ciekawsze niż te z podzadania 1.
 * Liczebności grup wynoszą kolejno: `1460 280 1070 1008 1980`
-* Starałem się aby testy były różnorodne, w każdej grupie jest trochę takich z wynikiem `TAK` i `NIE`, a także parzyste i nieparzyste wartości `n`.
+* Starałem się aby testy były różnorodne, jest trochę takich z wynikiem `TAK` i `NIE`, a także parzyste i nieparzyste wartości `n`, czy inne zależności.
 * Jeśli zauważysz błąd w testach lub checkerce to fajnie jakbyś się podzielił ze wszystkimi.
 * Skrypt `spr.sh` wymaga środowiska bash (Linux / WSL / macOS).
 

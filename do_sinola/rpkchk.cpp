@@ -97,11 +97,17 @@ int main(int argc, char **argv) {
         bool B = (b + 1 < n ? b1[b + 1][c] : 0);
         bool C = (c + 1 < n ? b1[b][c + 1] : 0);
         bool D = (b + 1 < n && c + 1 < n ? b1[b + 1][c + 1] : 0);
-        if(((int)A + B + C + D) > 1) {
-            cout << "WRONG\n";
-            cout << "Ruch " << ruch + 1 << " prowadzi do ataku krolow\n";
-            exit(1);
-        }
+        for (int i = -1; i <= 1; i++)
+            for (int j = -1; j <= 1; j++) {
+                if (i == 0 && j == 0) continue;
+                if (b + i < 0 || b + i >= n) continue;
+                if (c + j < 0 || c + j >= n) continue;
+                if (b1[b + i][c + j]) {
+                    cout << "WRONG\n";
+                    cout << "Ruch " << ruch + 1 << " prowadzi do ataku krolow\n";
+                    exit(1);
+                }
+            }
     }
 
     rep(i, 0, n) rep(j, 0, n) if(b1[i][j] != b2[i][j]) {

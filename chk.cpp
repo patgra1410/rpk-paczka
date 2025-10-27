@@ -59,20 +59,25 @@ int main() {
         int a, b, c;
         cin >> a >> b >> c;
         a--, b--, c--;
+        if (b<0 || b>=n||c<0 || c>=n){ return 1;}
         if(abs(b - where[a].first) > 1) { cout << "Ruch " << ruch << " na pole nieprzylegajace \n"; return 1; }
         if(abs(c - where[a].second) > 1) { cout << "Ruch " << ruch << " na pole nieprzylegajace \n"; return 1; }
         auto [d, e] = where[a];
         b1[d][e] = 0;
         where[a] = {b, c};
         b1[b][c] = a + 1;
-        bool A = b1[b][c];
-        bool B = (b + 1 < n ? b1[b + 1][c] : 0);
-        bool C = (c + 1 < n ? b1[b][c + 1] : 0);
-        bool D = (b + 1 < n && c + 1 < n ? b1[b + 1][c + 1] : 0);
-        if(((int)A + B + C + D) > 1) { cout << "Ruch " << ruch << " doprowadza do ataku \n"; return 1; }
+        for (int i = -1; i <= 1; i++)
+            for (int j = -1; j <= 1; j++) {
+                if (i == 0 && j == 0) continue;
+                if (b + i < 0 || b + i >= n) continue;
+                if (c + j < 0 || c + j >= n) continue;
+                if (b1[b + i][c + j]) {
+                    cout << "Ruch " << ruch << " doprowadza do ataku \n";
+                    return 1;
+                }
+            }
     }
 
     rep(i, 0, n) rep(j, 0, n) if(b1[i][j] != b2[i][j]) { cout << "Ruchy nie prowadza do stanu koncowego\n"; return 1; }
     cout << "OK\n";
 }
-

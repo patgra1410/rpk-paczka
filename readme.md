@@ -1,7 +1,7 @@
 # 🧩 Paczka do zadania Rozwiązanie pokojowe
 ## Autor: Patryk Grabowski
 
-Wersja 1.01, 19.10.2025
+Wersja 1.02, 19.10.2025
 
 Ten pakiet zawiera **zestaw testów**, **weryfikator wyjścia** oraz **narzędzia pomocnicze** do lokalnego testowania rozwiązań dla zadania **Rozwiązanie pokojowe**.
 
